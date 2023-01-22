@@ -1,6 +1,6 @@
 <br><br><br>
     <div class="container">
-    {!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
+    {!! Form::open(array('route' => 'hotel.store','method'=>'POST')) !!}
             <div class="row justify-content-md-center">
                 
                 <div class="col col-lg-2">
