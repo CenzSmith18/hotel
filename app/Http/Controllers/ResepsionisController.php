@@ -40,6 +40,16 @@ class ResepsionisController extends Controller
         ->join('booking', 'users.id', '=', 'booking.id_user')
         ->select('users.*', 'booking.*')
         ->paginate(10);
+
+        foreach ($users as $p) {
+            echo $p->tanggal_checkin;
+            if($p->tanggal_checkin == date("Y-m-d")) {
+                DB::table('booking')->where('id',$p->id)->update([
+                    'status' => 1
+                ]);
+            }
+        }
+        
         return view('resepsionis/index',compact('users'));
        
     }

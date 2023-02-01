@@ -19,7 +19,7 @@
         <div class="col">
 
         </div>
-
+        
         <div class="col">
 
             <form action="/resepsionis/cari" method="GET">
@@ -51,6 +51,10 @@
  
     <?php $angka = 0; ?>
   @foreach($users as $p)
+  <?php
+  if($p -> tanggal_checkin == date("Y-m-d"))
+
+  ?>
     <?php $angka++; ?>
     <tr>
     <td>{{$angka}}</td>

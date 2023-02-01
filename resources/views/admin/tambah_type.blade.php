@@ -20,7 +20,7 @@
         </ul>
     </div>
 @endif
-{!! Form::open(array('url' => 'admin/store_type','method'=>'POST')) !!}
+{!! Form::open(array('url' => 'admin/store_type','method'=>'POST', 'enctype'=>'multipart/form-data')) !!}
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
@@ -34,6 +34,10 @@
         <div class="form-group">
             <strong>Fasilitas:</strong>
             {!! Form::text('fasilitas', null, array('placeholder' => 'AC,TV,Bathub','class' => 'form-control')) !!}
+        </div>
+        <div class="form-group">
+            <strong>Gambar:</strong>
+            {!! Form::file('image',array('class' => 'form-control')) !!}
         </div>
         <br>
     

@@ -14,6 +14,7 @@
       <th scope="col">#</th>
       <th scope="col">Tipe Kamar</th>
       <th scope="col">Jumlah Kamar</th>
+     
       <th scope="col">Aksi</th>
     </tr>
   </thead>
@@ -24,7 +25,7 @@
     <tr>
     <td>{{ $angka}}</td>
       <td>{{ $p->type_label}}</td>
-      <td>{{ $p->type_label}}</td>
+     
 			<td>{{ $p->jumlah_kamar }}</td>
       <td>
 				<a href="/admin/edit_type/{{ $p->id_type }}">Edit</a>

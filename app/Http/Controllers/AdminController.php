@@ -59,12 +59,23 @@ class AdminController extends Controller
      */
     public function store_type(Request $request)
     {
-     
+        $this->validate($request, [
+			'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+		]);
 
+        $image = $request->file('image');
+        $tujuan_upload = 'public/image_upload';
+      	        // isi dengan nama folder tempat kemana file diupload
+		$tujuan_upload = 'image_upload';
+ 
+                // upload file
+		$image->move($tujuan_upload,$image->getClientOriginalName());
         DB::table('type')->insert([
             'type_label' => $request->type_label,
             'jumlah_kamar' => $request->jumlah_kamar,
             'fasilitas' => $request->fasilitas,
+            'type_gambar' => 'image_upload/'.$image->getClientOriginalName(),
+            
             
         ]);
         return redirect('/admin');
